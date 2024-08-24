@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student sign in page</title>
+</head>
+<body>
+<h1>Student Sign In</h1>
+<form th:action="@{/Success}" th:object="${signInForm}" th:method="post">
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" th:field="*{firstName}">
+    <div th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First name error</div>
+
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" th:field="*{lastName}">
+    <div th:if="${#fields.hasErrors('lastName')}"   th:errors="*{lastName}">Last name error</div>
+
+    <label for="email">Student Email</label>
+    <input type="text" id="email" th:field="*{email}">
+    <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
+
+    <p>Select Course</p>
+    <label for="classCode">Class Code</label>
+    <select th:field="*{classCode}" id="classCode">
+        <option th:value="COP1000c" th:text="'COP1000c'">COP2805</option>
+        <option th:value="COP2220c" th:text="'COP2220c'">COP2800</option>
+        <option th:value="COP2224c" th:text="'COP2224c'">COP2800</option>
+        <option th:value="COP2800c" th:text="'COP2800c'">COP2800</option>
+        <option th:value="COP2805c" th:text="'COP2805c'">COP2800</option>
+        <option th:value="COP3275c" th:text="'COP3275c'">COP2750</option>
+    </select>
+
+    <button type="submit">Sign In</button>
+</form>
+</body>
+</html>

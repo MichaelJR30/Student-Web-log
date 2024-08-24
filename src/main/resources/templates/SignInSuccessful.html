@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signed In</title>
+    <meta http-equiv="refresh" content="10;url=/">
+</head>
+<body>
+    <h1>Successfully Signed In</h1>
+    <p>First Name: <span th:text="${signInForm.firstName}"></span></p>
+    <p>Last Name: <span th:text="${signInForm.lastName}"></span></p>
+    <p>Email: <span th:text="${signInForm.email}"></span></p>
+    <p>Class: <span th:text="${signInForm.classCode}"></span></p>
+
+    <p>Click Done to redirected to the sign-in page or wait 10 seconds to be redirected.</p>
+<form th:action="@{/}" method="get">
+    <button type="submit">Done</button>
+</form>
+</body>
+</html>
